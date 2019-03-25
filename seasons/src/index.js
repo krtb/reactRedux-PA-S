@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// functional component
-const App = () => {
+class App extends React.Component {
 
-    // need to pass in 2 seperate function callbacks
-    window.navigator.geolocation.getCurrentPosition(
+    render() {
 
-        // first func called when location success
-        // success Callback
-        (position) => console.log(position, 'SUCCESS'),
-        // fauilure callback, unable to determine
-        (err) => console.log(err, 'FAILURE')
+        // need to pass in 2 seperate function callbacks
+        window.navigator.geolocation.getCurrentPosition(
 
-    );
-    
-    return <div>Hi there!</div>
+            // first func called when location success
+            // success Callback
+            (position) => console.log(position),
+            // fauilure callback, unable to determine
+            (err) => console.log(err)
+
+        );
+        return <div>Lattitude: </div>;
+    }
+
 }
 
 ReactDOM.render(

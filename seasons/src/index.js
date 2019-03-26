@@ -12,6 +12,11 @@ class App extends React.Component {
         // to make sure parent gets called, call SUPER w/ props
         super(props)
 
+        this.state = {
+            // don't know value yet, will know later
+            lat: null,
+        };
+
     }
 
     render() {

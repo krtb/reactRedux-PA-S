@@ -15,6 +15,7 @@ class App extends React.Component {
         this.state = {
             // don't know value yet, will know later
             lat: null,
+            errorMessage: '',
         };
 
         // User's Current Latitude is single piece of state that we care about here:
@@ -29,15 +30,22 @@ class App extends React.Component {
                 this.setState({lat: position.coords.latitude})
             },
             // fauilure callback, unable to determine
-            (err) => console.log(err)
+            err => {
+                this.setState({ errorMessage: err.message })
+            }
 
         );
 
     }
 
     render() {
-
-        return <div>Lattitude: {this.state.lat}</div>;
+        return (
+            <div>
+                Lattitude: {this.state.lat}
+                <br />
+                Error Message: {this.state.errorMessage}
+            </div>    
+        );
     }
 
 }

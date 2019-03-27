@@ -23,15 +23,14 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = props => {  
   // helper variable
   const season = getSeason(props.lat, new Date().getMonth());
-
-  // will return our object with text and icon name inside of it, {text, iconName}
-  seasonConfig[season]
+  // destructuring of CONFIG OBJECT
+  const { text, iconName } = seasonConfig[season];  
 
   return (
     <div>
-      <i className={`${icon} icon`} />
+      <i className={`${iconName} icon`} />
       <h1>{text}</h1>
-      <i className={`${icon} icon`} />
+      <i className={`${iconName} icon`} />
     </div>
   );
 };

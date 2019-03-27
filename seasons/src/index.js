@@ -24,7 +24,10 @@ class App extends React.Component {
 
             // first func called when location success
             // success Callback
-            (position) => console.log(position),
+            position => {
+                // to update state object, called setState()
+                this.setState({lat: position.coords.latitude})
+            },
             // fauilure callback, unable to determine
             (err) => console.log(err)
 

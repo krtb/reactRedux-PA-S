@@ -17,7 +17,9 @@ class App extends React.Component {
             lat: null,
             errorMessage: '',
         };
+    }
 
+    componentDidMount() {
         // User's Current Latitude is single piece of state that we care about here:
 
         // need to pass in 2 seperate function callbacks
@@ -27,7 +29,7 @@ class App extends React.Component {
             // success Callback
             position => {
                 // to update state object, called setState()
-                this.setState({lat: position.coords.latitude})
+                this.setState({ lat: position.coords.latitude })
             },
             // fauilure callback, unable to determine
             err => {
@@ -35,7 +37,6 @@ class App extends React.Component {
             }
 
         );
-
     }
 
     render() {

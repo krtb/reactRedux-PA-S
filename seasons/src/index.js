@@ -3,21 +3,10 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
-    // initialized with props object
-    constructor(props) {
-        // have to call super, pass in props
-        // extending, borrowing functionality
-        // defnining here replaces/overrides constructor func
-        // inside of React.Component class
-        // to make sure parent gets called, call SUPER w/ props
-        super(props)
-
-        this.state = {
-            // don't know value yet, will know later
-            lat: null,
-            errorMessage: '',
-        };
-    }
+   state = {
+       lat: null,
+       errorMessage: '',
+   }
 
     componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(

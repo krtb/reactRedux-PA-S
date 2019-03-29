@@ -3,8 +3,8 @@ import React from 'react';
 class SearchBar extends React.Component {
 
   // event handler, callback function
-  onInputChange() {
-
+  onInputChange(e) {
+    console.log(e.target.value);
   }
 
     render(){

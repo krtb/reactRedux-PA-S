@@ -8,4 +8,10 @@ const Spinner = props => {
     );
 }
 
+// to be run IF we forget to put in a message || decide not to
+Spinner.defaultProps = {
+    // default props to be passed in 
+    message: "Loading..."
+};
+
 export default Spinner;

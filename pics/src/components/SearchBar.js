@@ -9,8 +9,13 @@ class SearchBar extends React.Component {
   onFormSubmit = (e) => {
     // will prevent form from being submitted automatically
     e.preventDefault();
-    // log out what user is inputting
-    console.log(this.state.term);
+    // whenever using Class based component,
+    // reference props object with THIS
+    this.props.onSubmit(this.state.term)
+
+    // 1 => this.props = props that we've provided THIS instance of SearchBAr
+    // 2 => onSubmit = callback function to  be pass in data
+    // 3 => this.state.term = will send data on form submission
     
   }
 

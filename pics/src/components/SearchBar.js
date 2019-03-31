@@ -17,8 +17,8 @@ class SearchBar extends React.Component {
             <form className="ui form">
               <div className="field">
                 <label>Image Search</label>
-                {/* onInputChange not with (), or would be called every time component rendered */}
-                <input type="text" value={this.state.term}  onChange={e => this.setState({term: e.target.value })}/>
+                {/* take input value, force to uppercase each time filtered in, replace input value with transformed text */}
+                <input type="text" value={this.state.term}  onChange={e => this.setState({term: e.target.value.toUpperCase() })}/>
               </div>
             </form>
           </div>

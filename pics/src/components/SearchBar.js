@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
     this.props.onSubmit(this.state.term)
 
     // 1 => this.props = props that we've provided THIS instance of SearchBAr
-    // 2 => onSubmit = callback function to  be pass in data
+    // 2 => onSubmit = callback function to be passed in data
     // 3 => this.state.term = will send data on form submission
     
   }

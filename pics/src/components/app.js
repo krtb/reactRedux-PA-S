@@ -2,6 +2,7 @@ import React from 'react';
 // convention to import libraries above components
 import axios from 'axios';
 import SearchBar from './SearchBar';
+require("dotenv").config();
 
 // functional component
 class App extends React.Component {
@@ -15,16 +16,19 @@ class App extends React.Component {
         // 2 - will have options that allow us to custmize this request/ identify ourselves, who is trying to access the API
         // end point that will allow us to search for photos = search/photos
         // adding in a header of authorization
-        axios.get("https://api.unsplash.com/search/photos", {
-          params: {
-            // query=cars --> would be the end result, takes in value from above
-            query: term
-          },
-          headers: {
-            Authorization:
-              "Client-ID ab7746df8875f603b96c308fbdc7291435e78a60607c36ea62324d95e8ac73bc"
-          }
-        });
+        axios
+          .get("https://api.unsplash.com/search/photos", {
+            params: {
+              // query=cars --> would be the end result, takes in value from above
+              query: term
+            },
+            headers: {
+              Authorization: `Client-ID ${process.env.REACT_APP_MYAPIKEY}`
+            }
+          })
+          .then(promise => {
+            console.log(promise, "HERE IS MY PROMISE");
+          }); 
     }
 
     render() {

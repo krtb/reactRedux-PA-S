@@ -10,13 +10,8 @@ class App extends React.Component {
     // axios to send request
     // for API to send a response back
     // => but time we get reponse back, will have exited onSearchSubmit method
-    onSearchSubmit = (term) => {
-        // takes 2 seperate args
-        // 1 - the address that we want to make a GET request to
-        // 2 - will have options that allow us to custmize this request/ identify ourselves, who is trying to access the API
-        // end point that will allow us to search for photos = search/photos
-        // adding in a header of authorization
-        axios
+    async onSearchSubmit(term) {
+        const response = await axios
           .get("https://api.unsplash.com/search/photos", {
             params: {
               // query=cars --> would be the end result, takes in value from above
@@ -26,9 +21,11 @@ class App extends React.Component {
               Authorization: `Client-ID ${process.env.REACT_APP_MYAPIKEY}`
             }
           })
-          .then(promise => {
-            console.log(promise, "HERE IS MY PROMISE");
-          }); 
+          console.log(response.data.results );
+          
+          // .then(resp => {
+          //   console.log(resp.data.results, "HERE IS MY PROMISE");
+          // }); 
     }
 
     render() {

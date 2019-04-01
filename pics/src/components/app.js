@@ -1,4 +1,6 @@
 import React from 'react';
+// convention to import libraries above components
+import axios from 'axios';
 import SearchBar from './SearchBar';
 
 // functional component
@@ -6,7 +8,7 @@ class App extends React.Component {
     // callback to be passed to SearchBard component
     // Parent component should worry about the logic
     onSearchSubmit = (term) => {
-        console.log(term);
+        
     }
 
     render() {

@@ -5,8 +5,10 @@ import SearchBar from './SearchBar';
 
 // functional component
 class App extends React.Component {
-    // callback to be passed to SearchBard component
-    // Parent component should worry about the logic
+    // ASYNCHRONUS REQUEST: will take some amount of time for
+    // axios to send request
+    // for API to send a response back
+    // => but time we get reponse back, will have exited onSearchSubmit method
     onSearchSubmit = (term) => {
         // takes 2 seperate args
         // 1 - the address that we want to make a GET request to
@@ -20,7 +22,7 @@ class App extends React.Component {
           },
           headers: {
             Authorization:
-              "Client-ID ACCESSKEYDIGITSGOHEREnotstoringforsecurityreasons"
+              "Client-ID ab7746df8875f603b96c308fbdc7291435e78a60607c36ea62324d95e8ac73bc"
           }
         });
     }

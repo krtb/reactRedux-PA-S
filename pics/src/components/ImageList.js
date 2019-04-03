@@ -1,3 +1,4 @@
+import './ImageList.css';
 import React from 'react';
 
 // after creating images prop, now passing in that data by
@@ -13,7 +14,7 @@ const ImageList = (props) => {
     });
 
 
-    return <div>{images}</div>
+    return <div className="image-list">{images}</div>
 }
 
 export default ImageList

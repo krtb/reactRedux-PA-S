@@ -1,6 +1,7 @@
 import React from 'react';
 import unsplash from '../components/api/unsplash';
 import SearchBar from './SearchBar';
+import ImageList from './ImageList'
 
 // functional component
 class App extends React.Component {
@@ -30,7 +31,7 @@ class App extends React.Component {
             <div className="ui container" style={{marginTop: '10px'}}>
                 {/* onSearchSubmit is a refrence to callback function defined above, should not be invoked and run immediately */}
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                Found: {this.state.images.length} images
+                <ImageList />
             </div>
         );
     };

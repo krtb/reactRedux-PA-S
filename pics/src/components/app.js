@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import unsplash from '../components/api/unsplash';
 import SearchBar from './SearchBar';
 
 // functional component
@@ -12,7 +12,7 @@ class App extends React.Component {
     // ASYNC AWAIT SYNTAX
     // need to move over the async keyword when using arrow function to bind this
     onSearchSubmit = async (term) => {
-        const response = await axios
+        const response = await unsplash
           .get("/search/photos", {
             params: {
               query: term

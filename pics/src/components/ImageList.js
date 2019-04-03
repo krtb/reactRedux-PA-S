@@ -5,7 +5,8 @@ import React from 'react';
 const ImageList = (props) => {
     // going to map over our list of images
     const images = props.images.map((image)=>{
-        return <img src={image.urls.regular} />
+        // when creating lists in react, they have to have a unique key 
+        return <img key={image.id} src={image.urls.regular} />
     });
 
 

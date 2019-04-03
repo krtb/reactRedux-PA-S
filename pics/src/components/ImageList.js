@@ -4,10 +4,11 @@ import React from 'react';
 // ADDING PROPS
 const ImageList = (props) => {
     // going to map over our list of images
-    const images = props.images.map((image)=>{
+    const images = props.images.map( ( { description, id, urls} ) =>{
         // when creating lists in react, they have to have a unique key 
         return (
-          <img key={image.id} alt={image.id} src={image.urls.regular} />
+            // since we repeat the `image` keyword, can destructure this out
+          <img key={id} alt={description} src={urls.regular} />
         );
     });
 

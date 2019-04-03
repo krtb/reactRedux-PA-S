@@ -31,7 +31,8 @@ class App extends React.Component {
             <div className="ui container" style={{marginTop: '10px'}}>
                 {/* onSearchSubmit is a refrence to callback function defined above, should not be invoked and run immediately */}
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList />
+                {/* define new `images` props */}
+                <ImageList images={this.state.images}/>
             </div>
         );
     };

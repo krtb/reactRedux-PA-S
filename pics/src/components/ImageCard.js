@@ -11,7 +11,16 @@ class ImageCard extends React.Component {
     }
 
     componentDidMount() {
-        // here image has not downloaded yet, getting 0 as img height
+        // Vanilla JS function
+        // any time img loads, emits load event
+        this.imageRef.current.addEventListener('load', this.setSpans)
+        // adding a callback function as a second callback
+        // callbacks need to be bound
+    }
+
+    // need to bind callback with arrow function
+    // once current images have loaded, can then grab clientHeight
+    setSpans = () => {
         console.log(this.imageRef.current.clientHeight);
     }
     

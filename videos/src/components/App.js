@@ -5,6 +5,9 @@ import SearchBar from './SearchBar'
 
 
 class App extends React.Component{
+
+    //TODO: wire up youtube api request, to pass to SeachBar component, only one that needs to be aware of data
+    
     render() {
         return (
             // default styling from semantic adds small margins on the sides of searchbar component 

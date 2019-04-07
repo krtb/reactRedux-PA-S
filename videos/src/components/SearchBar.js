@@ -6,6 +6,14 @@ class SearchBar extends React.Component{
         term: '',
     }
 
+    // step 3 = create your callback arrow function, to capture this
+    onInputChange = (e) => {
+        // step 4 = change state with this.setState() function, pass in event target value that was input
+        this.setState({
+            term: this.e.target.value
+        })
+    }
+
     render(){
         return(
             
@@ -14,8 +22,8 @@ class SearchBar extends React.Component{
                     <div className="field" >
                         <label>Video Search</label>
                         {/* add default value from state to display on first render */}
-                        {/* if you don't add an OnChange() event, input won't be allowed to change */}
-                        <input value={this.state.term} type="text" ></input>
+                        {/* step 2 = adding in onChange callback method, that will eventually pass data to SearchBar callback */}
+                        <input value={this.state.term} onChange={this.onInputChange} type="text" ></input>
                     </div>
                 </form>
             </div>

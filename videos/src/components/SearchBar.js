@@ -1,6 +1,11 @@
 import React from 'react';
 
 class SearchBar extends React.Component{
+    // add in state to create a controlled SearchBar component
+    state = {
+        term: '',
+    }
+
     render(){
         return(
             

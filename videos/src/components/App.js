@@ -7,7 +7,10 @@ import SearchBar from './SearchBar'
 class App extends React.Component{
     render() {
         return (
+            // default styling from semantic adds small margins on the sides of searchbar component
+            <div className="ui container" >
             <div><SearchBar/></div>
+            </div>
         );
     }
 }

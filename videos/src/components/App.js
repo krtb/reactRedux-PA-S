@@ -5,14 +5,17 @@ import SearchBar from './SearchBar'
 
 
 class App extends React.Component{
-
     //TODO: wire up youtube api request, to pass to SeachBar component, only one that needs to be aware of data
+    onTermSubmit = (term) => {
+        console.log(term);
+    }
     
     render() {
         return (
             // default styling from semantic adds small margins on the sides of searchbar component 
             <div className="ui container" >
-            <div><SearchBar/></div>
+            {/* when passing down props, can call anything */}
+            <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
             </div>
         );
     }

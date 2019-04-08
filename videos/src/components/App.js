@@ -5,6 +5,9 @@ import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
 
 class App extends React.Component{
+    state = {
+        videos: [],
+    }
     
 
     // want to take list of videos received and set them as state on our APP component, will allow it to udpate, redender itself
@@ -17,8 +20,9 @@ class App extends React.Component{
         })
         //  can see data in console => network => xhr => preview
         // here is wher list of videos is being returned
-        console.log(resp.data.items);
-        
+        this.setState({
+            videos: resp.data.items
+        })
     }
     
     render() {
@@ -27,6 +31,7 @@ class App extends React.Component{
             <div className="ui container" >
             {/* when passing down props, can call anything */}
             <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
+            I have {this.state.videos.length}
             </div>
         );
     }

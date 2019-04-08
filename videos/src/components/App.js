@@ -2,12 +2,18 @@
 // will hold al of the different state for our Application
 import React from 'react';
 import SearchBar from './SearchBar'
-
+import youtube from '../apis/youtube'
 
 class App extends React.Component{
     //TODO: wire up youtube api request, to pass to SeachBar component, only one that needs to be aware of data
     onTermSubmit = (term) => {
-        console.log(term);
+        // can call instance of youtube apy you created
+        // pass in route that I want acces to, SEARCH ENDPOINT IN THIS CASE
+        youtube.get('/search', {
+            params: {
+                q: term,
+            }
+        })
     }
     
     render() {

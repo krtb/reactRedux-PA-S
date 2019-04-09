@@ -3,6 +3,7 @@
 import React from 'react';
 import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
+import VideoList  from './VideoList'
 
 class App extends React.Component{
     state = {
@@ -31,7 +32,7 @@ class App extends React.Component{
             <div className="ui container" >
             {/* when passing down props, can call anything */}
             <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
-            I have {this.state.videos.length}
+            <VideoList videos={this.state.videos} />
             </div>
         );
     }

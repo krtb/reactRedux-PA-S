@@ -8,7 +8,7 @@ const VideoList = ({ videos }) => {
     // which we describe with video variable
     // map over array to produce brand new array
     const renderdList = videos.map((video)=>{
-        return <VideoItem />
+        return <VideoItem  video={video} />
     });
 
     return(

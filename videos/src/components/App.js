@@ -26,6 +26,11 @@ class App extends React.Component{
             videos: resp.data.items
         })
     }
+
+    // add new callback function, will always be arrow function
+    onVideoSelect = (video) => {
+        // will be called with a video object, fetched from youtube api
+    }
     
     render() {
         return (

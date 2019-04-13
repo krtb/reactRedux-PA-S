@@ -4,6 +4,7 @@ import React from 'react';
 import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
 import VideoList  from './VideoList'
+import VideoDetail from './VideoDetail'
 
 class App extends React.Component{
     state = {
@@ -28,6 +29,7 @@ class App extends React.Component{
     }
 
     // add new callback function, will always be arrow function
+    // onVideoSelect, want to update state on app class
     onVideoSelect = (video) => {
         // will be called with a video object, fetched from youtube api
         this.setState({
@@ -41,6 +43,8 @@ class App extends React.Component{
             <div className="ui container" >
             {/* when passing down props, can call anything */}
             <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
+            {/* passing down singular object, makes sense to call prop singular name */}
+            <VideoDetail video={this.state.selectedVideo} />
             <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
             </div>
         );

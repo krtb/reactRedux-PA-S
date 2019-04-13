@@ -8,6 +8,7 @@ import VideoList  from './VideoList'
 class App extends React.Component{
     state = {
         videos: [],
+        selectedVideo: null,
     }
     
 

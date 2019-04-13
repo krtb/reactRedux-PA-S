@@ -4,7 +4,7 @@ import React from 'react';
 import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
 import VideoList  from './VideoList'
-import VideoDetail from './VideoDetail'
+wimport VideoDetail from './VideoDetail'
 
 class App extends React.Component{
     state = {
@@ -43,7 +43,6 @@ class App extends React.Component{
             <div className="ui container" >
             {/* when passing down props, can call anything */}
             <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
-            {/* passing down singular object, makes sense to call prop singular name */}
             <VideoDetail video={this.state.selectedVideo} />
             <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
             </div>

@@ -1,0 +1,11 @@
+/* add css so that item centered against image */
+/* add css so that image is not too large */
+.video-item {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer;
+}
+
+.video-item.item img{
+    max-width: 180px;
+}

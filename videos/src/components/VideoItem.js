@@ -1,5 +1,7 @@
 import './VideoItem.css'
 import React from 'react';
+// when communicating down, parent to child, use props
+// when communicating back up, make use of callBack func
 
 // destructure out prop being pass in from videlist, in videoItem parent component
 const VideoItem = ({video, onVideoSelect}) => {

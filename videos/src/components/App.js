@@ -39,7 +39,7 @@ class App extends React.Component{
             <div className="ui container" >
             {/* when passing down props, can call anything */}
             <div><SearchBar onFormSubmit={this.onTermSubmit} /></div>
-            <VideoList videos={this.state.videos} />
+            <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
             </div>
         );
     }

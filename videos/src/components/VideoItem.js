@@ -4,8 +4,9 @@ import React from 'react';
 // destructure out prop being pass in from videlist, in videoItem parent component
 const VideoItem = ({video, onVideoSelect}) => {
     return(
-        // find root div of component and give it className === to component
-        <div className="video-item item" >
+        // add arrow function, want to call onVideoSelect with some arg
+        // if placed without arrow func, will be called without video object
+        <div onClick={() => onVideoSelect(video)} className="video-item item" >
             <img className="ui image" src={video.snippet.thumbnails.medium.url} />
             <div className="content" >
                 <div className="header">

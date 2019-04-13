@@ -1,5 +1,6 @@
 /* add css so that item centered against image */
 /* add css so that image is not too large */
+/* rule of cursor pointer, to make sure to show users that they can click on an item */
 .video-item {
     display: flex !important;
     align-items: center !important;

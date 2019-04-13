@@ -1,8 +1,8 @@
 import React from 'react';
 import VideoItem from './VideoItem'
 
-// add deconstructed prop
-const VideoList = ({ videos }) => {
+// destructure out props that come from parent component in App.js
+const VideoList = ({ videos, onVideoSelect }) => {
     // map over list of items
     // inside of videos array are many objects,
     // which we describe with video variable

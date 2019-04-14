@@ -5,11 +5,17 @@ import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
 import VideoList  from './VideoList'
 import VideoDetail from './VideoDetail'
+import './App.css'
 
 class App extends React.Component{
     state = {
         videos: [],
         selectedVideo: null,
+    }
+
+    // to show something more than just `loading...` text
+    componentDidMount(){
+        this.onTermSubmit('buildings')
     }
     
 
@@ -23,8 +29,11 @@ class App extends React.Component{
         })
         //  can see data in console => network => xhr => preview
         // here is wher list of videos is being returned
+        // instant user searches for something, show them inside the videodetail
         this.setState({
-            videos: resp.data.items
+            videos: resp.data.items,
+            selectedVideo: resp.data.items[0],
+            // now will see a video be selected to the left, when searching term
         })
     }
 

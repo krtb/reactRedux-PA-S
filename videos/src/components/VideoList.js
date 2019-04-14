@@ -9,7 +9,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
     // map over array to produce brand new array
     const renderdList = videos.map((video)=>{
         // add new prop that receives callback
-        return <VideoItem onVideoSelect={onVideoSelect}  video={video} />
+        return <VideoItem key={video.id.videoId} onVideoSelect={onVideoSelect}  video={video} />
     });
 
     return(

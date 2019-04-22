@@ -37,3 +37,10 @@ const selectedSongReducer = (selectedSong = null, action) => {
     // if not the correct type, return what ever currentyl selected song is
     return selectedSong
 }
+
+// keys of this object, will be the ones seen inside of our state object
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+});
+// now any other file in project has access to combined set of reducers

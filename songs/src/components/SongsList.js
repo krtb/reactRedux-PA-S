@@ -41,7 +41,7 @@ class SongsList extends Component {
 
 // anytime rerun reducers and prod new state obj, this function runs with newly created state obj.
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     
     return {
         songs: state.songs

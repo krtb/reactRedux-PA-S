@@ -8,4 +8,10 @@ import App from './components/App';
 import reducers from './reducers'
 
 // need to create an instance of provider and wrap app component with it
-ReactDOM.render( <App />, document.querySelector('#root'));
+ReactDOM.render( 
+    <Provider store={createStore(reducers)} >
+    <App />
+    </Provider>
+    , 
+    document.querySelector('#root')
+);

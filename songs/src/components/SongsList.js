@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 class SongsList extends Component {
     render(){
+        // this.props === {songs: state.songs}
+        // how we get data from our redux store into a component
+        console.log(this.props);
+        
         return (
             <div>SONG LIST</div>
         )
@@ -14,8 +18,11 @@ class SongsList extends Component {
 // function could be called anything else, 'getMyState' for example
 // called with all state inside redux store
 const mapStateToProps = (state) => {
-    console.log(state);
-    return state
+    return {
+        songs: state.songs
+    }
+    // object returned will show up as props inside our component
+    
 } 
 
 // returning a function, second set invokes functions that was returned

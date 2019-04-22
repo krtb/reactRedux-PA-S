@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class SongsList extends Component {
     render(){
@@ -8,4 +9,5 @@ class SongsList extends Component {
     }
 }
 
-export default SongsList
+// returning a function, second set invokes functions that was returned
+export default connect()(SongsList)

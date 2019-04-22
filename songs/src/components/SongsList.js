@@ -2,13 +2,31 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SongsList extends Component {
+
+    renderList(){
+        // after new array with JSX elements created, want to return on function call
+        return this.props.songs.map((song)=>{
+            // this will return some JSX element
+            return (
+                <div className="item" key={song.title}  >
+                    <div className="right floated content" >
+                        <button className="ui primary button" >
+                            Select
+                        </button>
+                    </div>
+
+                    <div className="content" >{song.title}</div>
+                </div>
+            );
+        })
+    }
+
     render(){
         // this.props === {songs: state.songs}
         // how we get data from our redux store into a component
         console.log(this.props);
-        
         return (
-            <div>SONG LIST</div>
+            <div className="ui divided list" >{this.renderList()}</div>
         )
     }
 }

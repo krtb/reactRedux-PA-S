@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SongDetail = (props) => {
-    console.log(props);
+// destructure out prop that you care about
+const SongDetail = ({song}) => {
+    // console.log(props);
+    if(!song){
+        return (
+            <div>SELECT A SONG</div>
+        )
+    }
     
     return (
         <div>
-            SongDetail
+            {song.title}
         </div>
     )
 }

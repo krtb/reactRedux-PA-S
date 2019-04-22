@@ -3,4 +3,4 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 // setup ReactDOM
-ReactDOM.render( <App />, document.querySelector('#root'));okay
+ReactDOM.render( <App />, document.querySelector('#root'));

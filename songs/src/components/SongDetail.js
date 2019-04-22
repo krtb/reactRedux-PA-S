@@ -9,12 +9,17 @@ const SongDetail = ({song}) => {
             <div>SELECT A SONG</div>
         )
     }
-    
+
     return (
         <div>
-            {song.title}
+            <h3>Details for:</h3>
+            <p>
+                Title: {song.title}
+                <br/>
+                Duration: {song.duration}
+            </p>
         </div>
-    )
+    );
 }
 
 // will be called with entire state object,

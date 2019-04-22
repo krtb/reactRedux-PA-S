@@ -1,3 +1,5 @@
+import {combineReducers} from 'redux' //named export exammple, need to look at documentation from that library to know which type
+
 // reducer that will contain a static list of songs
 // usually would not need reducer for this, just an example
 const songsReducer = () => {

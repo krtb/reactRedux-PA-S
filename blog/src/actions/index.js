@@ -9,6 +9,11 @@ export const fetchPosts = () =>
     dispatch({ type: 'FETCH_POSTS', payload: response.data})
 };
 
-export const fetchUser = () => {
-    
+// pass in ID of user we want to fetch, as arg
+// create a func that returns a func
+export const fetchUser = (id) => async dispatch => {
+
+    const response = await jsonPlaceholder.get(`/users/ + ${id}`)
+
+    dispatch({type: 'FETCH_USER', payload: response.data})
 };
